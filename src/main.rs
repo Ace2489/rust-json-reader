@@ -1,11 +1,19 @@
 use std::fs;
-use std::fs::File;
-use std::io::ErrorKind;
+use json::JsonValue;
 
 fn main(){
+    let json_str = fs::read_to_string("data.json").expect("No file found");
 
-    let _json_file = fs::read_to_string("data.json").expect("Error: No JSON file to read!!");   
+    let parsed = json::parse(&json_str.to_string());
 
-
-
+    match parsed {
+        Ok(JsonValue::Object(obj))=>{
+            if let Some(value) = obj.get("naive"){
+                println!("Found the value {value:?}");
+            }
+        }
+        Ok(_)=> println!("Root is not an object!"),
+        Err(err)=>println!("The operation failed with the error {err:?}"),   
+    
+    }
 }
