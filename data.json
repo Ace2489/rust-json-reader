@@ -1,1 +1,6 @@
-{"naive":"native","jugu":"buzz"}
+{
+  "naive": "native",
+  "jugu": "buzz",
+  "list": [{ "name": "first" }],
+  "nested": { "nest": "value" }
+}
