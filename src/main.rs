@@ -7,7 +7,7 @@ fn main() {
     // #[derive(Debug)]
     enum QueryStep<'a>{
         Key(&'a str),
-        Index(i32)
+        Index(usize)
     }
 
     let Some(json_path) = env::args().nth(1) else {
@@ -53,6 +53,8 @@ fn main() {
             },
             QueryStep::Index(index)=>{
                 let JsonValue::Array(array) = value else {panic!("A json array index was given but the current data position is not an array")};
+                value = &array[index];
+                if value.is_null(){break;}
             }
         }
     }
