@@ -37,12 +37,7 @@ fn main() {
         }
     } 
 
-    // println!("{:?}",queries);
-    let Ok(JsonValue::Object(temp_obj)) = parsed else{
-        panic!("Something went wrong when parsing {json_path:?}")
-    }; 
-
-    let mut value:&JsonValue = &JsonValue::Object(temp_obj);
+    let mut value = &parsed.expect(format!("Something went wrong while parsing {json_path:#?}").as_str());
 
     for query in queries{
         match query {
