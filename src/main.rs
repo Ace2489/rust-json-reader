@@ -60,6 +60,6 @@ fn main() {
     }
 
     if value.is_null(){println!("Your query did not return any result!");return};
-    println!("{:?}",value);
+    println!("{:#}",value.dump());
     
 }
