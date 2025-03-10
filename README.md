@@ -13,7 +13,7 @@ A lightweight, efficient command-line tool for querying JSON files using a simpl
 ## Usage
 
 ```bash
-cargo run /path/to/file.json "path.to.value[0].property"
+cargo run  -- /path/to/file.json path.to.value[0].property
 ```
 
 ## Example
@@ -38,11 +38,11 @@ You can query specific values:
 
 ```bash
 # Get John's age
-$ json_query data.json "users[0].details.age"
+$ cargo run  -- /path/to/file.json  users[0].details.age
 30
 
 # Get John's first role
-$ json_query data.json "users[0].details.roles[0]"
+$ cargo run  --  /path/to/file.json users[0].details.roles[0]
 "admin"
 ```
 
