@@ -62,4 +62,4 @@ Borrowing some ideas from compiler construction, the execution process is as fol
   
 ## License
 
-MIT
+MIT License - See [LICENSE](LICENSE) for details
