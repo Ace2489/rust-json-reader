@@ -7,7 +7,6 @@ A lightweight, efficient command-line tool for querying JSON files using a simpl
 - Fast JSON parsing with minimal dependencies
 - Support for nested object traversal via dot notation
 - Array access using bracket notation
-- Robust error handling with informative messages
 - Zero configuration required
 
 ## Usage
@@ -51,8 +50,6 @@ $ cargo run  --  /path/to/file.json users[0].details.roles[0]
 This tool uses:
 - Regular expressions for parsing query paths
 - Pattern matching for type-safe JSON traversal
-- Rust's powerful error handling for robust user feedback
-- Minimal memory footprint for processing large JSON files
 
 ## Parsing and Execution
 
